@@ -55,8 +55,8 @@ API documentation có thể được truy cập tại `http://localhost:8080/swa
 
 ## Công nghệ sử dụng
 - Cơ sở dữ liệu (Database): Sử dụng SQL Server cho dữ liệu quan hệ.
-- Sử dụng Java Spring Boot để xây dựng các API.
-- Sử dụng HTML, CSS để xây dựng giao diện.
+- Framework: Sử dụng Java Spring Boot để xây dựng các API.
+- Giao diện: Sử dụng HTML, CSS để xây dựng giao diện, JavaScript để quản lý tương tác người dùng và kết nối với API.
 
 ## Đóng góp
 Chúng tôi rất hoan nghênh mọi đóng góp để cải thiện hệ thống. Nếu bạn muốn đóng góp, vui lòng tạo pull request hoặc báo cáo issues.
