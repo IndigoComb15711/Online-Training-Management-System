@@ -46,8 +46,8 @@ mvn spring-boot:run
 ### Sử dụng
 - Truy cập vào địa chỉ `http://localhost:8080`
 - Đăng nhập với tài khoản mặc định:
-- Username: admin
-- Password: 123456
+- Tên đăng nhập: admin
+- Mật khẩu: 123456
 - Khám phá các tính năng của hệ thống thông qua menu chính
 
 ### API Documentation
