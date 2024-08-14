@@ -8,9 +8,7 @@ Hệ thống Quản lý Đào tạo Trực tuyến là một ứng dụng đư�
 ### 1. Quản lý khóa học
 - Lưu trữ, chỉnh sửa thông tin: Mã khóa học, tên khóa học, giảng viên phụ trách, thời lượng, học phí
 - Tìm kiếm khóa học theo giảng viên và học phí
-- Danh sách học viên đăng ký khóa học
-- Danh sách học viên hoàn thành khóa học
-- Khóa học phổ biến nhất
+- Top 5 khóa học phổ biến nhất
 
 ### 2. Quản lý giảng viên
 - Lưu trữ, chỉnh sửa thông tin: Mã giảng viên, họ tên, chuyên môn, kinh nghiệm
@@ -21,6 +19,8 @@ Hệ thống Quản lý Đào tạo Trực tuyến là một ứng dụng đư�
 ### 3. Quản lý học viên
 - Lưu trữ, chỉnh sửa thông tin: Mã học viên, họ tên, địa chỉ, số điện thoại, email
 - Tính tổng số học viên đăng ký theo thời gian
+- Danh sách học viên đăng ký khóa học
+- Danh sách học viên hoàn thành khóa học
 
 ## Cài đặt và Sử dụng
 
