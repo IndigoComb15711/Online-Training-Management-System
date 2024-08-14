@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm Kiếm Khóa Học</title>
+    <link rel="stylesheet" href="/css/timkiemkhoahoc.css">
+    <link rel="icon" href="/images/logo.png" type="image/png" />
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <div class="header-left">
+        <h1>Hệ Thống Quản Lý Đào Tạo</h1>
+    </div>
+    <div class="header-right">
+        <a href="/">Quay lại Trang Chính</a>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+<!--        <h2>Tìm Kiếm Khóa Học</h2>-->
+
+        <!-- Phần tìm kiếm theo giảng viên -->
+        <div class="section search-section-left">
+            <div class="search-container">
+                <h3>Tìm kiếm khóa học theo giảng viên</h3>
+                <form id="timKiemGiangVienForm">
+                    <select id="maGV" name="maGV" required>
+                        <option value="">Chọn Giảng Viên</option>
+                        <option value="GV01">Giảng Viên 01</option>
+                        <option value="GV02">Giảng Viên 02</option>
+                        <option value="GV03">Giảng Viên 03</option>
+                        <option value="GV04">Giảng Viên 04</option>
+                        <option value="GV05">Giảng Viên 05</option>
+                        <option value="GV06">Giảng Viên 06</option>
+                        <option value="GV07">Giảng Viên 07</option>
+                        <option value="GV08">Giảng Viên 08</option>
+                        <option value="GV09">Giảng Viên 09</option>
+                        <option value="GV10">Giảng Viên 10</option>
+                        <option value="GV11">Giảng Viên 11</option>
+                        <option value="GV12">Giảng Viên 12</option>
+                        <option value="GV13">Giảng Viên 13</option>
+                    </select>
+                    <button type="submit">Tìm Kiếm</button>
+                </form>
+                <div id="resultGiangVien"></div>
+            </div>
+        </div>
+
+        <!-- Phần tìm kiếm theo học phí -->
+        <div class="section search-section-right">
+            <div class="search-container">
+                <h3>Tìm kiếm khóa học theo học phí</h3>
+                <form id="timKiemHocPhiForm">
+                    <select id="hocPhiRange" name="hocPhiRange" required>
+                        <option value="">Chọn Khoảng Học Phí</option>
+                        <option value="0-500000">0đ - 500,000đ</option>
+                        <option value="500000-1500000">500,000đ - 1,500,000đ</option>
+                        <option value="1500000-3000000">1,500,000đ - 3,000,000đ</option>
+                        <option value="3000000-5000000">3,000,000đ - 5,000,000đ</option>
+                        <option value="5000000-">Trên 5,000,000đ</option>
+                    </select>
+                    <button type="submit">Tìm Kiếm</button>
+                </form>
+                <div id="resultHocPhi"></div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    &copy; 2024 Hệ thống quản lý đào tạo. Tất cả các quyền được bảo lưu.
+</footer>
+
+<script src="/js/timkiemkhoahoc.js"></script>
+<script>
+    function createSparkles() {
+        const main = document.querySelector('main');
+        for (let i = 0; i < 50; i++) {
+            const sparkle = document.createElement('div');
+            sparkle.classList.add('sparkle');
+            sparkle.style.left = `${Math.random() * 100}%`;
+            sparkle.style.top = `${Math.random() * 100}%`;
+            sparkle.style.animationDelay = `${Math.random() * 2}s`;
+            main.appendChild(sparkle);
+        }
+    }
+
+    createSparkles();
+</script>
+
+</body>
+</html>

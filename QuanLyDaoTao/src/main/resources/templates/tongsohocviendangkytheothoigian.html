@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tổng Số Học Viên Đăng Ký Theo Thời Gian</title>
+    <link rel="stylesheet" href="/css/tongsohocviendangkytheothoigian.css">
+    <link rel="icon" href="/images/logo.png" type="image/png" />
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <div class="header-left">
+        <h1>Hệ Thống Quản Lý Đào Tạo</h1>
+    </div>
+    <div class="header-right">
+        <a href="/">Quay lại Trang Chính</a>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <h2>Tổng Số Học Viên Đăng Ký Theo Thời Gian</h2>
+
+        <div class="content">
+            <!-- Tổng Số Học Viên Đăng Ký Theo Năm -->
+            <div class="section">
+                <h3>Tổng Số Học Viên Đăng Ký Theo Năm</h3>
+                <form id="year-form">
+                    <select id="year-select">
+                        <option value="">Năm</option>
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                    </select>
+                    <button type="button" id="btnYear">Hiển Thị</button>
+                </form>
+                <div class="display-section">
+                    <h4>Kết quả</h4>
+                    <table id="year-table">
+                        <thead>
+                        <tr>
+                            <th>Tháng</th>
+                            <th>Số Học Viên Đăng Ký Tháng</th>
+                            <th>Tổng Số Học Viên Đăng Ký Tích Lũy</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <!-- Dữ liệu sẽ được thêm vào đây -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Tổng Số Học Viên Theo Tháng/Năm -->
+            <div class="section">
+                <h3>Tổng Số Học Viên Theo Tháng - Năm</h3>
+                <form id="month-year-form">
+                    <select id="month-select">
+                        <option value="">Tháng</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                    <select id="month-year-select">
+                        <option value="">Năm</option>
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                    </select>
+                    <button type="button" id="btnMonthYear">Hiển Thị</button>
+                </form>
+                <div class="display-section">
+                    <h4>Kết quả</h4>
+                    <table id="month-year-table">
+                        <thead>
+                        <tr>
+                            <th>Ngày</th>
+                            <th>Số Học Viên Đăng Ký Ngày</th>
+                            <th>Tổng Số Học Viên Đăng Ký Tích Lũy</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <!-- Dữ liệu sẽ được thêm vào đây -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    &copy; 2024 Hệ thống quản lý đào tạo. Tất cả các quyền được bảo lưu.
+</footer>
+
+<script src="/js/tongsohocviendangkytheothoigian.js"></script>
+<script>
+    function createSparkles() {
+        const main = document.querySelector('main');
+        for (let i = 0; i < 50; i++) {
+            const sparkle = document.createElement('div');
+            sparkle.classList.add('sparkle');
+            sparkle.style.left = `${Math.random() * 100}%`;
+            sparkle.style.top = `${Math.random() * 100}%`;
+            sparkle.style.animationDelay = `${Math.random() * 2}s`;
+            main.appendChild(sparkle);
+        }
+    }
+
+    createSparkles();
+</script>
+</body>
+</html>

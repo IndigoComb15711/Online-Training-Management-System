@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thống Kê Học Viên</title>
+    <link rel="stylesheet" href="/css/thongkehocvientheogiangvien.css">
+    <link rel="icon" href="/images/logo.png" type="image/png" />
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <div class="header-left">
+        <h1>Hệ Thống Quản Lý Đào Tạo</h1>
+    </div>
+    <div class="header-right">
+        <a href="/">Quay lại Trang Chính</a>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <h2>Thống Kê Học Viên Theo Giảng Viên</h2>
+
+        <div class="content">
+            <div class="input-section">
+                <h3>Danh Sách Học Viên</h3>
+                <div class="search-bar">
+                    <select id="giangvien-select">
+                        <option value="">Chọn Giảng Viên</option>
+                        <option value="GV01">Giảng Viên 01</option>
+                        <option value="GV02">Giảng Viên 02</option>
+                        <option value="GV03">Giảng Viên 03</option>
+                        <option value="GV04">Giảng Viên 04</option>
+                        <option value="GV05">Giảng Viên 05</option>
+                        <option value="GV06">Giảng Viên 06</option>
+                        <option value="GV07">Giảng Viên 07</option>
+                        <option value="GV08">Giảng Viên 08</option>
+                        <option value="GV09">Giảng Viên 09</option>
+                        <option value="GV10">Giảng Viên 10</option>
+                        <option value="GV11">Giảng Viên 11</option>
+                        <option value="GV12">Giảng Viên 12</option>
+                        <option value="GV13">Giảng Viên 13</option>
+                    </select>
+                    <button id="btnDisplay">Hiển Thị</button>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <table id="student-table">
+                    <thead>
+                    <tr>
+                        <th>Mã Học Viên</th>
+                        <th>Tên Học Viên</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!-- Dữ liệu thống kê sẽ được thêm vào đây -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    &copy; 2024 Hệ thống quản lý đào tạo. Tất cả các quyền được bảo lưu.
+</footer>
+
+<script src="/js/thongkehocvientheogiangvien.js"></script>
+<script>
+    function createSparkles() {
+        const main = document.querySelector('main');
+        for (let i = 0; i < 50; i++) {
+            const sparkle = document.createElement('div');
+            sparkle.classList.add('sparkle');
+            sparkle.style.left = `${Math.random() * 100}%`;
+            sparkle.style.top = `${Math.random() * 100}%`;
+            sparkle.style.animationDelay = `${Math.random() * 2}s`;
+            main.appendChild(sparkle);
+        }
+    }
+
+    createSparkles();
+</script>
+
+</body>
+</html>

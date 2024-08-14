@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Danh Sách Học Viên Đăng Ký Khóa Học</title>
+  <link rel="stylesheet" href="/css/danhsachhocviendangky.css">
+  <link rel="icon" href="/images/logo.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Varela+Round:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+  <div class="header-left">
+    <h1>Hệ Thống Quản Lý Đào Tạo</h1>
+  </div>
+  <div class="header-right">
+    <a href="/">Quay lại Trang Chính</a>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <h2>Danh Sách Học Viên Đăng Ký Khóa Học</h2>
+
+    <!-- Phần danh sách tất cả học viên -->
+    <div class="section list-container">
+      <h3>Danh Sách Tất Cả Học Viên</h3>
+      <button onclick="fetchAllStudents()">Tải Danh Sách</button>
+      <div class="table-container">
+        <table id="student-table">
+          <thead>
+          <tr>
+            <th>Mã Khóa Học</th>
+            <th>Tên Khóa Học</th>
+            <th>Mã Học Viên</th>
+            <th>Tên Học Viên</th>
+            <th>Ngày Đăng Ký</th>
+            <th>Tình Trạng Đăng Ký</th>
+          </tr>
+          </thead>
+          <tbody id="student-list">
+          <!-- Dữ liệu học viên sẽ được chèn ở đây -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Phần danh sách học viên theo khóa học -->
+    <div class="section search-container">
+      <h3>Danh Sách Học Viên Theo Khóa Học</h3>
+      <div class="search-bar">
+        <select id="course-select">
+          <option value="">Chọn Khóa Học</option>
+          <option value="KH01">Khóa Học 01</option>
+          <option value="KH02">Khóa Học 02</option>
+          <option value="KH03">Khóa Học 03</option>
+          <option value="KH04">Khóa Học 04</option>
+          <option value="KH05">Khóa Học 05</option>
+          <option value="KH06">Khóa Học 06</option>
+          <option value="KH07">Khóa Học 07</option>
+          <option value="KH08">Khóa Học 08</option>
+          <option value="KH09">Khóa Học 09</option>
+          <option value="KH10">Khóa Học 10</option>
+          <option value="KH11">Khóa Học 11</option>
+          <option value="KH12">Khóa Học 12</option>
+          <option value="KH13">Khóa Học 13</option>
+        </select>
+        <button onclick="fetchStudentsByCourse()">Tải Danh Sách</button>
+      </div>
+      <div class="table-container">
+        <table id="course-student-table">
+          <thead>
+          <tr>
+            <th>Mã Khóa Học</th>
+            <th>Tên Khóa Học</th>
+            <th>Mã Học Viên</th>
+            <th>Tên Học Viên</th>
+            <th>Ngày Đăng Ký</th>
+            <th>Tình Trạng Đăng Ký</th>
+          </tr>
+          </thead>
+          <tbody id="course-student-list">
+          <!-- Dữ liệu học viên theo khóa học sẽ được chèn ở đây -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  &copy; 2024 Hệ thống quản lý đào tạo. Tất cả các quyền được bảo lưu.
+</footer>
+
+<script src="/js/danhsachhocviendangky.js"></script>
+<script>
+  function createSparkles() {
+    const main = document.querySelector('main');
+    for (let i = 0; i < 50; i++) {
+      const sparkle = document.createElement('div');
+      sparkle.classList.add('sparkle');
+      sparkle.style.left = `${Math.random() * 100}%`;
+      sparkle.style.top = `${Math.random() * 100}%`;
+      sparkle.style.animationDelay = `${Math.random() * 2}s`;
+      main.appendChild(sparkle);
+    }
+  }
+
+  createSparkles();
+</script>
+
+</body>
+</html>

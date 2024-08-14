@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Thông Tin Học Viên</title>
+    <link rel="stylesheet" href="/css/quanlyhocvien.css">
+    <link rel="icon" href="/images/logo.png" type="image/png" />
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <div class="header-left">
+        <h1>Hệ Thống Quản Lý Đào Tạo</h1>
+    </div>
+    <div class="header-right">
+        <a href="/">Quay lại Trang Chính</a>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <h2>Quản Lý Thông Tin Học Viên</h2>
+
+        <div class="content">
+            <div class="input-section">
+                <h3>Chức năng</h3>
+                <form id="student-form">
+                    <input type="text" id="maHV" placeholder="Mã Học Viên" required>
+                    <input type="text" id="tenHV" placeholder="Tên Học Viên" required>
+                    <input type="text" id="diaChi" placeholder="Địa Chỉ" required>
+                    <input type="text" id="sdt" placeholder="Số Điện Thoại" required>
+                    <input type="email" id="email" placeholder="Email" required>
+                </form>
+                <div class="button-group">
+                    <button id="btnCreate">Thêm</button>
+                    <button id="btnDisplay">Hiển Thị</button>
+                    <button id="btnUpdate">Sửa</button>
+                    <button id="btnDelete">Xóa</button>
+                </div>
+            </div>
+
+            <div class="display-section" id="display-section">
+                <h3>Thông tin học viên</h3>
+                <table id="student-table">
+                    <thead>
+                    <tr>
+                        <th>Mã Học Viên</th>
+                        <th>Tên Học Viên</th>
+                        <th>Địa Chỉ</th>
+                        <th>Số Điện Thoại</th>
+                        <th>Email</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!-- Dữ liệu học viên sẽ được thêm vào đây -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    &copy; 2024 Hệ thống quản lý đào tạo. Tất cả các quyền được bảo lưu.
+</footer>
+
+<script src="/js/quanlyhocvien.js"></script>
+<script>
+    function createSparkles() {
+        const main = document.querySelector('main');
+        for (let i = 0; i < 50; i++) {
+            const sparkle = document.createElement('div');
+            sparkle.classList.add('sparkle');
+            sparkle.style.left = `${Math.random() * 100}%`;
+            sparkle.style.top = `${Math.random() * 100}%`;
+            sparkle.style.animationDelay = `${Math.random() * 2}s`;
+            main.appendChild(sparkle);
+        }
+    }
+
+    createSparkles();
+</script>
+
+</body>
+</html>

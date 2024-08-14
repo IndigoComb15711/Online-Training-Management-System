@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Hệ thống quản lý đào tạo, quản lý khóa học, giảng viên và học viên." />
+    <meta name="keywords" content="Quản lý đào tạo, Khóa học, Giảng viên, Học viên" />
+    <meta name="author" content="IndigoComb15711" />
+    <meta property="og:title" content="Hệ thống quản lý đào tạo" />
+    <meta property="og:description" content="Quản lý khóa học, giảng viên và học viên một cách hiệu quả." />
+    <meta property="og:image" content="/images/9x.jpg" />
+    <meta property="og:url" content="http://localhost:8080/" />
+    <title>Hệ thống quản lý đào tạo</title>
+    <link rel="stylesheet" href="/css/trangchu.css" />
+    <link rel="icon" href="/images/logo.png" type="image/png" />
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<div class="parallax-bg"></div>
+<header>
+    <div class="header-left">
+        <h1>Hệ Thống Quản Lý Đào Tạo</h1>
+    </div>
+    <div class="header-right">
+        <a id="auth-link" href="#" aria-label="Link đăng nhập hoặc đăng xuất">Đăng nhập</a>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <div class="section">
+            <h2>Khóa Học</h2>
+            <div class="button-container">
+                <button onclick="checkLogin('/quan-ly-khoa-hoc')" aria-label="Quản lý Thông Tin Khóa Học">Quản lý Thông Tin Khóa Học</button>
+                <button onclick="checkLogin('/tim-kiem-khoa-hoc')" aria-label="Tìm Kiếm Khóa Học">Tìm Kiếm Khóa Học</button>
+                <button onclick="checkLogin('/danh-sach-hoc-vien-dang-ky')" aria-label="Danh Sách Học Viên Đăng Ký Khóa Học">Danh Sách Học Viên Đăng Ký Khóa Học</button>
+                <button onclick="checkLogin('/danh-sach-hvhtkh')" aria-label="Danh Sách Học Viên Hoàn Thành Khóa Học">Danh Sách Học Viên Hoàn Thành Khóa Học</button>
+            </div>
+        </div>
+        <div class="section">
+            <h2>Giảng Viên</h2>
+            <div class="button-container">
+                <button onclick="checkLogin('/quan-ly-giang-vien')" aria-label="Quản Lý Thông Tin Giảng Viên">Quản Lý Thông Tin Giảng Viên</button>
+                <button onclick="checkLogin('/lich-giang-day')" aria-label="Lịch Giảng Dạy">Lịch Giảng Dạy</button>
+                <button onclick="checkLogin('/thong-ke-hoc-vien-theo-giang-vien')" aria-label="Thống Kê Học Viên Theo Giảng Viên">Thống Kê Học Viên Theo Giảng Viên</button>
+                <button onclick="checkLogin('/top-5-giang-vien')" aria-label="TOP 5 Giảng Viên Có Nhiều Học Viên Nhất">TOP 5 Giảng Viên Có Nhiều Học Viên Nhất</button>
+            </div>
+        </div>
+        <div class="section">
+            <h2>Học Viên</h2>
+            <div class="button-container">
+                <button onclick="checkLogin('/quan-ly-hoc-vien')" aria-label="Quản Lý Thông Tin Học Viên">Quản Lý Thông Tin Học Viên</button>
+                <button onclick="checkLogin('/tong-so-hoc-vien-dang-ky-theo-thoi-gian')" aria-label="Tổng Số Học Viên Đăng Ký Theo Thời Gian">Tổng Số Học Viên Đăng Ký Theo Thời Gian</button>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    &copy; 2024 Hệ thống quản lý đào tạo. Tất cả các quyền được bảo lưu.
+</footer>
+
+<!-- Modal Đăng nhập -->
+<div id="login-modal" class="modal" role="dialog" aria-labelledby="login-form-title" aria-hidden="true">
+    <div class="modal-content">
+        <span class="close" aria-label="Đóng">&times;</span>
+        <form id="login-form" action="/login" method="POST">
+            <h3 id="login-form-title">ĐĂNG NHẬP</h3>
+            <div class="username">
+                <input type="text" name="username" placeholder="Tên đăng nhập" required aria-label="Tên đăng nhập" />
+            </div>
+            <div class="password">
+                <input type="password" name="password" placeholder="Mật khẩu" required aria-label="Mật khẩu" />
+            </div>
+            <button type="submit">Đăng nhập</button>
+        </form>
+    </div>
+</div>
+
+<!-- Modal thông báo cần đăng nhập -->
+<div id="alert-modal" class="modal" role="alertdialog" aria-labelledby="alert-message" aria-hidden="true">
+    <div class="modal-content">
+        <p id="alert-message">Bạn cần đăng nhập để sử dụng dịch vụ này.</p>
+        <button id="close-alert" aria-label="Đóng">Đóng</button>
+    </div>
+</div>
+
+<script defer>
+    document.addEventListener('DOMContentLoaded', function() {
+        const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+
+        const authLink = document.getElementById('auth-link');
+        if (isLoggedIn) {
+            authLink.textContent = 'Đăng xuất';
+            authLink.href = '#';
+            authLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                localStorage.removeItem('isLoggedIn');
+                window.location.reload();
+            });
+        } else {
+            authLink.textContent = 'Đăng nhập';
+            authLink.href = '#';
+            authLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                showModal('login');
+            });
+        }
+
+        const loginModal = document.getElementById('login-modal');
+        const alertModal = document.getElementById('alert-modal');
+        const closeLoginModal = document.querySelector('#login-modal .close');
+        const closeAlertModal = document.getElementById('close-alert');
+
+        closeLoginModal.addEventListener('click', function() {
+            loginModal.style.display = 'none';
+        });
+
+        closeAlertModal.addEventListener('click', function() {
+            alertModal.style.display = 'none';
+        });
+
+        window.addEventListener('click', function(event) {
+            if (event.target === loginModal) {
+                loginModal.style.display = 'none';
+            }
+            if (event.target === alertModal) {
+                alertModal.style.display = 'none';
+            }
+        });
+
+        const loginForm = document.getElementById('login-form');
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = loginForm.elements['username'].value;
+            const password = loginForm.elements['password'].value;
+
+            if (username === 'admin' && password === '123456') {
+                localStorage.setItem('isLoggedIn', 'true');
+                loginModal.style.display = 'none';
+                window.location.reload();
+            } else {
+                alert('Tên đăng nhập hoặc mật khẩu không đúng!');
+            }
+        });
+    });
+
+    function showModal(type) {
+        const modal = type === 'login' ? document.getElementById('login-modal') : document.getElementById('alert-modal');
+        modal.style.display = 'block';
+    }
+
+    function checkLogin(url) {
+        const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+        if (isLoggedIn) {
+            window.location.href = url;
+        } else {
+            showModal('alert');
+        }
+    }
+
+    function createSparkles() {
+        const main = document.querySelector('main');
+        for (let i = 0; i < 50; i++) {
+            const sparkle = document.createElement('div');
+            sparkle.classList.add('sparkle');
+            sparkle.style.left = `${Math.random() * 100}%`;
+            sparkle.style.top = `${Math.random() * 100}%`;
+            sparkle.style.animationDelay = `${Math.random() * 2}s`;
+            main.appendChild(sparkle);
+        }
+    }
+
+    createSparkles();
+
+
+</script>
+
+</body>
+
+</html>

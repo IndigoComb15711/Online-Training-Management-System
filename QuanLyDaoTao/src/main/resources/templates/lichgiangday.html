@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lịch Giảng Dạy</title>
+    <link rel="stylesheet" href="/css/lichgiangday.css">
+    <link rel="icon" href="/images/logo.png" type="image/png" />
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <div class="header-left">
+        <h1>Hệ Thống Quản Lý Đào Tạo</h1>
+    </div>
+    <div class="header-right">
+        <a href="/">Quay lại Trang Chính</a>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <h2>Lịch Giảng Dạy</h2>
+
+        <div class="content">
+            <div class="display-section" id="display-section">
+                <h3>Thông tin lịch giảng dạy</h3>
+                <table id="schedule-table">
+                    <thead>
+                    <tr>
+                        <th>Mã Lịch</th>
+                        <th>Mã Giảng Viên</th>
+                        <th>Tên Giảng Viên</th>
+                        <th>Mã Khóa Học</th>
+                        <th>Tên Khóa Học</th>
+                        <th>Ngày Giảng Dạy</th>
+                        <th>Khung Giờ</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!-- Dữ liệu lịch giảng dạy sẽ được thêm vào đây -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    &copy; 2024 Hệ thống quản lý đào tạo. Tất cả các quyền được bảo lưu.
+</footer>
+
+<script src="/js/lichgiangday.js"></script>
+<script>
+    function createSparkles() {
+        const main = document.querySelector('main');
+        for (let i = 0; i < 50; i++) {
+            const sparkle = document.createElement('div');
+            sparkle.classList.add('sparkle');
+            sparkle.style.left = `${Math.random() * 100}%`;
+            sparkle.style.top = `${Math.random() * 100}%`;
+            sparkle.style.animationDelay = `${Math.random() * 2}s`;
+            main.appendChild(sparkle);
+        }
+    }
+
+    createSparkles();
+</script>
+
+</body>
+</html>
