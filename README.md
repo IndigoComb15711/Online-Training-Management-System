@@ -10,13 +10,13 @@ Hệ thống Quản lý Đào tạo Trực tuyến là một ứng dụng đư�
 - Tìm kiếm khóa học theo giảng viên và học phí
 - Danh sách học viên đăng ký khóa học
 - Danh sách học viên hoàn thành khóa học
-- Danh sách khóa học phổ biến nhất
+- Khóa học phổ biến nhất
 
 ### 2. Quản lý giảng viên
 - Lưu trữ, chỉnh sửa thông tin: Mã giảng viên, họ tên, chuyên môn, kinh nghiệm
 - Quản lý lịch giảng dạy của giảng viên
 - Thống kê số lượng học viên theo giảng viên
-- Báo cáo danh sách giảng viên có nhiều học viên nhất
+- Top 5 giảng viên có nhiều học viên nhất
 
 ### 3. Quản lý học viên
 - Lưu trữ, chỉnh sửa thông tin: Mã học viên, họ tên, địa chỉ, số điện thoại, email
